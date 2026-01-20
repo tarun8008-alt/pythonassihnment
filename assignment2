@@ -1,0 +1,22 @@
+# Filename: task2.py
+
+def get_nonempty_text(prompt):
+    """Ask for non-empty text. Returns stripped string."""
+    while True:
+        text = input(prompt).strip()
+        if text:
+            return text
+        print("Input cannot be empty. Please try again.")
+
+def main():
+    print("=== Task 2: Personalized Greeting ===")
+    first_name = get_nonempty_text("Enter your first name: ")
+    last_name = get_nonempty_text("Enter your last name: ")
+
+    # Title case for neat formatting
+    full_name = f"{first_name} {last_name}".title()
+
+    print(f"Hello, {full_name}! Welcome to the Python program.")
+
+if __name__ == "__main__":
+    main()
