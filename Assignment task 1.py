@@ -1,0 +1,34 @@
+# Filename: task1.py
+
+def get_number(prompt):
+    """Ask for a number until valid. Returns float."""
+    while True:
+        value = input(prompt).strip()
+        try:
+            return float(value)
+        except ValueError:
+            print("Invalid input. Please enter a numeric value (e.g., 5, 10.5, -3).")
+
+def main():
+    print("=== Task 1: Basic Mathematical Operations ===")
+    num1 = get_number("Enter the first number: ")
+    num2 = get_number("Enter the second number: ")
+
+    addition = num1 + num2
+    subtraction = num1 - num2
+    multiplication = num1 * num2
+
+    # Division handling
+    if num2 == 0:
+        division_result = "undefined (cannot divide by zero)"
+    else:
+        division_result = num1 / num2
+
+    # Display results
+    print(f"Addition: {addition}")
+    print(f"Subtraction: {subtraction}")
+    print(f"Multiplication: {multiplication}")
+    print(f"Division: {division_result}")
+
+if __name__ == "__main__":
+    main()
